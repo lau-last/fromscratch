@@ -1,17 +1,19 @@
 body {
   overflow: hidden;
-  user-select: none;
+  /* user-select: none; */
   cursor: crosshair;
   min-height: 100vh;
 }
+
 .bubble {
   position: absolute;
   border-radius: 300px;
   opacity: 0;
   background: rgba(255, 166, 0, 0.612);
-  filter: hue-rotate(0deg);
   animation: anim 8s forwards;
+  filter: hue-rotate(0deg);
 }
+
 @keyframes anim {
   to {
     top: -250px;
