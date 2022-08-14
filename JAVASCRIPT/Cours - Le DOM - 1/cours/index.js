@@ -72,19 +72,61 @@ document.addEventListener("keypress", (e) => {
   } else {
     keypressContainer.style.background = "red";
   }
-  ring("./Enter");
+  //   ring("./Enter");
 });
 // -----------------------------------------------------
 // Scroll Event
 const nav = document.querySelector("nav");
 
 window.addEventListener("scroll", () => {
-    //   console.log(window.scrollY);
-    
-    if (window.scrollY > 120) {
-        nav.style.top = 0;
-    } else {
-        nav.style.top = "-50px";
-    }
+  //   console.log(window.scrollY);
+
+  if (window.scrollY > 120) {
+    nav.style.top = 0;
+  } else {
+    nav.style.top = "-50px";
+  }
 });
 // -----------------------------------------------------
+// Form Events
+const inputName = document.querySelector('input[type="text"]');
+const select = document.querySelector("select");
+const form = document.querySelector("form");
+let pseudo = "";
+let language = "";
+
+inputName.addEventListener("input", (e) => {
+  pseudo = e.target.value;
+});
+
+select.addEventListener("input", (e) => {
+  language = e.target.value;
+});
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  if (cgv.checked) {
+    document.querySelector("form > div").innerHTML = `
+    <h3>Pseudo : ${pseudo}</h3>
+    <h4>Langage préféré : ${language}</h4>
+    `;
+  } else {
+    alert("veuillez accepter les CGV");
+  }
+});
+// -----------------------------------------------------
+// Load event
+window.addEventListener("load", () => {
+  console.log("document chargé !");
+});
+// -----------------------------------------------------
+// ForEach
+// const boxes = document.getElementsByClassName('box');
+const boxes = document.querySelectorAll(".box");
+
+boxes.forEach((box) => {
+  box.addEventListener("click", (e) => {
+    e.target.style.transform = "scale(0.7)";
+  });
+});
