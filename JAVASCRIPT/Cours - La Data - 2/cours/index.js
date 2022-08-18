@@ -187,3 +187,30 @@ arrayNumber.push(17);
 // console.log(arrayNumber.filter((number)=> number > 10));
 // console.log(arrayNumber.sort());
 // console.log(arrayNumber.sort((a, b) => a - b));
+
+// arrayNumber.map((number) => console.log(number));
+// arrayNumber.map((number) => (document.body.innerHTML = number));
+// arrayNumber.map((number) => (document.body.innerHTML += `<li>${number}</li>`));
+// document.body.innerHTML = arrayNumber
+//   .map((number) => `<li>${number}</li>`)
+//   .join("");
+
+// ----------------------
+// Méthodes objects
+// ----------------------
+document.body.innerHTML = data
+// .filter((user) => user.admin === false)
+.filter((user) => user.pseudo.includes("i"))
+.sort((a, b) => a.age - b.age)
+  .map(
+    (user) =>
+      `
+<div class="user-card">
+  <h2>${user.pseudo}</h2>
+  <p>Age : ${user.age} ans</p>
+  <p>Technologies : ${user.technos.join(" / ")}</p>
+  <p>Status : ${user.admin ? "Modérateur" : "Membre"}</p>
+</div>
+  `
+  )
+  .join("");
