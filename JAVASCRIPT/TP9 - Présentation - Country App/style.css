@@ -2,6 +2,7 @@
   text-align: center;
   padding-bottom: 20px;
 }
+
 input {
   margin: 20px auto;
   display: block;
@@ -9,20 +10,47 @@ input {
   text-align: center;
   transition: 0.2s;
 }
+
 input:focus {
   border-radius: 30px;
   background: rgb(238, 238, 238);
 }
+
 .range-container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 input[type="range"] {
   width: 250px;
   margin: 0 10px 10px 0;
 }
+
 .range-container span {
   font-size: 1.2rem;
   transform: translateY(-3px);
+}
+
+.countries-container {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1 0 20%;
+  min-width: 250px;
+  margin: 5px;
+  padding: 50px;
+  color: whitesmoke;
+  background: rgb(20, 20, 20);
+  border-radius: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+img {
+  height: 100px;
+  width: 160px;
+  object-fit: cover;
 }
