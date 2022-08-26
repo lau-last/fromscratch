@@ -1,12 +1,13 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Card from "./Card";
 
 const Countries = () => {
   const [data, setData] = useState([]);
   const [rangeValue, setRangeValue] = useState(36);
   const [selectedRadio, setSelectedRadio] = useState("");
-  const radio = ["Africa", "America", "Asia", "Europe", "Oceania"];
+  const radios = ["Africa", "America", "Asia", "Europe", "Oceania"];
+
   // Le useEffect se joue lorsque le composant est monté
   useEffect(() => {
     axios
@@ -24,7 +25,7 @@ const Countries = () => {
           defaultValue={rangeValue}
           onChange={(e) => setRangeValue(e.target.value)}
         />
-        {radio.map((continent) => (
+        {radios.map((continent) => (
           <li key={continent}>
             <input
               type="radio"
