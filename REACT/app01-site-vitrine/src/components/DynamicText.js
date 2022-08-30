@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
 
 const DynamicText = () => {
-    return (
-        <div>
-            <h2>TEXT</h2>
-        </div>
-    );
+  return (
+    <span className="dynamic-text">
+      <span></span>
+      <span id="text-target"></span>
+    </span>
+  );
 };
 
 export default DynamicText;
