@@ -1,12 +1,14 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import {init} from "@emailjs/browser";
+init(process.env.ID);
 
-const FormTemplate = () => {
+const ContactForm = () => {
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
-    const formMess = document.querySelector(".form-message");
+    const formMess = document.querySelector(".formMessage");
 
     emailjs
       .sendForm(
@@ -38,18 +40,25 @@ const FormTemplate = () => {
 
   return (
     <div className="form-container">
-      <form ref={form} onSubmit={sendEmail}>
-        <label>Name</label>
-        <input type="text" name="name" required autoComplete="off" />
+      <h2>contactez-nous</h2>
+      <form ref={form} onSubmit={sendEmail} className="form-content">
+        <label>nom</label>
+        <input type="text" name="name" required autoComplete="off" id="name" />
         <label>Email</label>
-        <input type="email" name="email" required autoComplete="off" />
+        <input
+          type="email"
+          name="email"
+          required
+          autoComplete="off"
+          id="email"
+        />
         <label>Message</label>
-        <textarea name="message" required/>
-        <input type="submit" value="Envoyer"/>
+        <textarea name="message" id="mess" required />
+        <input type="submit" value="Envoyer" className="hover button" />
       </form>
-      <div className="form-message"></div>
+      <div className="formMessage"></div>
     </div>
   );
 };
 
-export default FormTemplate;
+export default ContactForm;

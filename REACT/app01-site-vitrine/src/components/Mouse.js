@@ -18,7 +18,11 @@ const Mouse = () => {
     });
   }, []);
 
-  return <span className="cursor"></span>;
+  return (
+    <div>
+      <span className="cursor"></span>
+    </div>
+  );
 };
 
 export default Mouse;
