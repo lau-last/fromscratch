@@ -27,7 +27,6 @@ const Form = () => {
           />
           <input type="submit" value="Rechercher" />
         </form>
-
         <div className="btn-sort-container">
           <div
             className="btn-sort"
@@ -48,6 +47,7 @@ const Form = () => {
       <div className="result">
         {moviesData
           .slice(0, 12)
+          //eslint-disable-next-line
           .sort((a, b) => {
             if (sortGoodBad === "goodToBad") {
               return b.vote_average - a.vote_average;
@@ -56,7 +56,7 @@ const Form = () => {
             }
           })
           .map((movie) => (
-            <Card key={movie.id} movie={movie} />
+            <Card movie={movie} key={movie.id} />
           ))}
       </div>
     </div>
