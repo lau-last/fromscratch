@@ -8,7 +8,7 @@ const App = () => {
       <h1>Extreme</h1>
       <PostForm />
       <div className="content">
-        <div className="post-container">Contenu</div>
+        <div className="post-container">Contenu </div>
         <User />
       </div>
     </div>
